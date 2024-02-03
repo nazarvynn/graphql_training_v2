@@ -21,6 +21,7 @@ import { ToastModule } from 'primeng/toast';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { GraphQLModule } from './graphql.module';
 
 @NgModule({
   imports: [
@@ -44,6 +45,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     DynamicDialogModule,
     ChipModule,
     ReactiveFormsModule,
+    GraphQLModule,
   ],
   declarations: [AppComponent, DashboardComponent],
   providers: [],

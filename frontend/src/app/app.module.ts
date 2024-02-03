@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,7 +21,16 @@ import { ToastModule } from 'primeng/toast';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NotfoundComponent } from './demo/components/notfound/notfound.component';
+import { CountryService } from './demo/service/country.service';
+import { CustomerService } from './demo/service/customer.service';
+import { EventService } from './demo/service/event.service';
+import { IconService } from './demo/service/icon.service';
+import { NodeService } from './demo/service/node.service';
+import { PhotoService } from './demo/service/photo.service';
+import { ProductService } from './demo/service/product.service';
 import { GraphQLModule } from './graphql.module';
+import { AppLayoutModule } from './layout/app.layout.module';
 
 @NgModule({
   imports: [
@@ -46,9 +55,19 @@ import { GraphQLModule } from './graphql.module';
     ChipModule,
     ReactiveFormsModule,
     GraphQLModule,
+    AppLayoutModule,
   ],
-  declarations: [AppComponent, DashboardComponent],
-  providers: [],
+  declarations: [AppComponent, DashboardComponent, NotfoundComponent],
+  providers: [
+    { provide: LocationStrategy, useClass: PathLocationStrategy },
+    CountryService,
+    CustomerService,
+    EventService,
+    IconService,
+    NodeService,
+    PhotoService,
+    ProductService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

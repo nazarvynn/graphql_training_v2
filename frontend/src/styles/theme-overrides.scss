@@ -1,0 +1,9 @@
+.main-layout-aside {
+  .p-menuitem-link {
+    padding-left: 2.5rem;
+  }
+  .p-menuitem-link-active {
+    background: var(--gray-100);
+    border-left: 2px solid var(--primary-color);
+  }
+}

@@ -1,0 +1,14 @@
+<div class="flex flex-column h-screen">
+  <app-main-header></app-main-header>
+  <div class="flex-1 flex bg-gray-100">
+    <aside class="main-layout-aside w-18rem flex justify-content-center py-3">
+      <p-menu styleClass="w-16rem min-h-full" [model]="mainMenu"></p-menu>
+    </aside>
+    <div class="flex-1 flex flex-column overflow-auto">
+      <main class="flex-1">
+        <router-outlet></router-outlet>
+      </main>
+      <app-main-footer></app-main-footer>
+    </div>
+  </div>
+</div>
